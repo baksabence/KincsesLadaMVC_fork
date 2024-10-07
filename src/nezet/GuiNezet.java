@@ -1,11 +1,45 @@
 
 package nezet;
 
+import javax.swing.ButtonModel;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
 public class GuiNezet extends javax.swing.JFrame {
     public void megjelenit(String uzenet){
         txaLeiras.setText(uzenet);
     }
+    
+    public void felugro(String uzenet){
+        JOptionPane.showMessageDialog(rootPane, uzenet);
+    }
+
+    public JButton getBtnValasztas() {
+        return btnValasztas;
+    }
+    
+    
    
+    public int bekeres() {
+//        int db = buttonGroup1.getButtonCount();
+//        if(rdbArany.isSelected() || rdbBronz.isSelected() || rdbEzust.isSelected()){
+//            ButtonModel gomb = buttonGroup1.getSelection();
+//            
+//        }
+
+        int v = -1;
+        if (rdbArany.isSelected()) {
+            v = 0;
+        }else if(rdbEzust.isSelected()){
+            v = 1;
+        }else if(rdbBronz.isSelected()){
+            v = 2;
+        }
+        
+        return v;
+    }
+    
+    
     public GuiNezet() {
         initComponents();
     }

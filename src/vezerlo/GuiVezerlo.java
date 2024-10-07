@@ -1,6 +1,9 @@
 
 package vezerlo;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import modell.JatekModell;
 import nezet.GuiNezet;
 
@@ -25,18 +28,32 @@ public class GuiVezerlo {
     }
 
     private void valasztas() {
-        int v = nezet.bekeres();
-//        if ((v = nezet.bekeres()) == -1) {
-//            modell.setValasztas(v);
-//            nezet.felugro("Nincs láda kiválasztva");
-//        }else{
-//            modell.setValasztas(v);
-//            nezet.felugro(modell.ellenorzes());
-//        }
-        modell.setValasztas(v);
-        String s = "nincs láda kiválasztva!";
-        s = v > - 1 ? modell.ellenorzes() : s;
-        nezet.felugro(s);
+        JButton gomb = nezet.getBtnValasztas();
+        gomb.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int v = nezet.bekeres();
+                modell.setValasztas(v);
+                String s = "nincs láda kiválasztva!";
+                s = v > - 1 ? modell.ellenorzes() : s;
+                nezet.felugro(s);
+            }
+        });
+        
+        
+        
+//        int v = nezet.bekeres();
+////        if ((v = nezet.bekeres()) == -1) {
+////            modell.setValasztas(v);
+////            nezet.felugro("Nincs láda kiválasztva");
+////        }else{
+////            modell.setValasztas(v);
+////            nezet.felugro(modell.ellenorzes());
+////        }
+//        modell.setValasztas(v);
+//        String s = "nincs láda kiválasztva!";
+//        s = v > - 1 ? modell.ellenorzes() : s;
+//        nezet.felugro(s);
 
         
         
