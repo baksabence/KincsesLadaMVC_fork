@@ -49,12 +49,19 @@ public class GuiNezet extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jMenu1 = new javax.swing.JMenu();
         jScrollPane1 = new javax.swing.JScrollPane();
         txaLeiras = new javax.swing.JTextArea();
         rdbArany = new javax.swing.JRadioButton();
         rdbEzust = new javax.swing.JRadioButton();
         rdbBronz = new javax.swing.JRadioButton();
         btnValasztas = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +79,18 @@ public class GuiNezet extends javax.swing.JFrame {
         rdbBronz.setText("Bronz láda");
 
         btnValasztas.setText("Választás");
+
+        jMenu2.setText("File");
+
+        jMenuItem1.setText("Választás");
+        jMenu2.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Edit");
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,7 +124,7 @@ public class GuiNezet extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rdbBronz)
                     .addComponent(btnValasztas))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -117,6 +136,11 @@ public class GuiNezet extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnValasztas;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton rdbArany;
     private javax.swing.JRadioButton rdbBronz;
