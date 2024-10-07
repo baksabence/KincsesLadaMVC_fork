@@ -25,14 +25,19 @@ public class GuiVezerlo {
     }
 
     private void valasztas() {
-        int v;
-        if ((v = nezet.bekeres()) == -1) {
-            modell.setValasztas(v);
-            nezet.felugro("Nincs láda kiválasztva");
-        }else{
-            modell.setValasztas(v);
-            nezet.felugro(modell.ellenorzes());
-        }
+        int v = nezet.bekeres();
+//        if ((v = nezet.bekeres()) == -1) {
+//            modell.setValasztas(v);
+//            nezet.felugro("Nincs láda kiválasztva");
+//        }else{
+//            modell.setValasztas(v);
+//            nezet.felugro(modell.ellenorzes());
+//        }
+        modell.setValasztas(v);
+        String s = "nincs láda kiválasztva!";
+        s = v > - 1 ? modell.ellenorzes() : s;
+        nezet.felugro(s);
+
         
         
         modell.setValasztas(nezet.bekeres());
